@@ -1,0 +1,132 @@
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+  text-decoration: none
+
+html
+  overflow-x: hidden
+  overflow-x: clip
+  line-height: 1.15
+  -webkit-text-size-adjust: 100%
+  -webkit-tap-highlight-color: transparent
+  background-color: var(--cor-branco)
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  background-color: var(--cor-branco)
+  scroll-behavior: smooth
+
+#tela
+  width: 100%
+  min-height: 100vh
+
+div,
+section
+  scrollbar-width: none
+
+div::-webkit-scrollbar,
+section::-webkit-scrollbar
+  display: none !important
+
+body.bloquear,
+body.bloqueado
+  overflow: hidden !important
+
+// o hidden do navegador e so um display: none de folha padrao, entao qualquer
+// display explicito no elemento o anula. sem esta regra, um painel com
+// display: grid continua na tela mesmo com o atributo hidden
+[hidden]
+  display: none !important
+
+// regra tipografica da casa, aplicada na base pra nao virar remendo por secao.
+// balance equilibra o comprimento das linhas do titulo; pretty mexe so na
+// ultima linha do corpo, evitando a palavra sozinha. o navegador que nao
+// suportar volta a quebrar do jeito padrao, sem regressao
+h1,
+h2,
+h3
+  text-wrap: balance
+
+p,
+li
+  text-wrap: pretty
+
+::selection
+  color: var(--cor-branco)
+  background-color: var(--cor-azul)
+
+// nas seções navy a seleção inverte, senão azul sobre azul some
+.situacoes ::selection,
+.especialidades ::selection,
+.contato ::selection,
+footer ::selection
+  color: var(--cor-azul-escuro)
+  background-color: var(--cor-azul-suave)
+
+a,
+img,
+svg,
+button
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  -khtml-user-select: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  -webkit-text-size-adjust: none
+  -webkit-touch-callout: none
+  -o-user-select: none
+
+a
+  background-color: transparent
+  cursor: pointer
+
+img
+  border-style: none
+  -webkit-user-drag: none
+  user-drag: none
+
+button
+  font-family: inherit
+  line-height: 1
+  margin: 0
+  -moz-appearance: none !important
+  -webkit-appearance: button
+  appearance: button
+  text-transform: none
+  overflow: visible
+  cursor: pointer
+
+button *
+  pointer-events: none
+
+input
+  line-height: 1
+  -moz-appearance: none !important
+  appearance: none
+  overflow: visible
+
+textarea
+  -moz-appearance: none !important
+  appearance: none
+  overflow: auto
+  scrollbar-width: none
+
+textarea::-webkit-scrollbar
+  display: none
+
+[type='button']
+  -webkit-appearance: button
+  appearance: button
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner
+  border-style: none
